@@ -40,3 +40,17 @@ export const metadata: Metadata = {
       "검색 의도와 제품 정보를 연결하는 콘텐츠 마케터 주다혜의 포트폴리오입니다.",
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="ko">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+      </body>
+    </html>
+  );
+}
