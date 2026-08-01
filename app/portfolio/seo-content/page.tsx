@@ -460,23 +460,33 @@ export default function SeoContentPage() {
         </div>
         </section>
 
-      <nav className="case-pagination" aria-label="프로젝트 이동">
-        <Link href="/portfolio" className="case-pagination-back">
-          <span>←</span>
-          <div>
-            <small>BACK TO</small>
-            <strong>PROJECT INDEX</strong>
-          </div>
-        </Link>
+<nav className="case-pagination" aria-label="프로젝트 이동">
+  <Link href="/portfolio" className="case-pagination-back">
+    <span className="case-pagination-arrow" aria-hidden="true">
+      ←
+    </span>
 
-        <div className="case-pagination-next">
-          <div>
-            <small>NEXT CASE</small>
-            <strong>B2B WEB CONTENT</strong>
-          </div>
-          <span>→</span>
-        </div>
-      </nav>
+    <div>
+      <small>BACK TO</small>
+      <strong>PROJECT INDEX</strong>
+    </div>
+  </Link>
+
+  <Link
+    href="/portfolio/b2b-web-content"
+    className="case-pagination-next"
+    aria-label="다음 프로젝트 B2B Web Content 보기"
+  >
+    <div>
+      <small>READ NEXT · 02</small>
+      <strong>B2B WEB CONTENT</strong>
+    </div>
+
+    <span className="case-pagination-arrow" aria-hidden="true">
+      →
+    </span>
+  </Link>
+</nav>
     </main>
   );
 }

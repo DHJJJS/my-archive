@@ -7222,3 +7222,107 @@ a {
     text-align: left;
   }
 }
+/* ========================================
+   Case navigation refinement
+======================================== */
+
+.case-pagination {
+  min-height: clamp(260px, 34vw, 430px);
+  background: #f1eee5;
+}
+
+.case-pagination-back,
+.case-pagination-next {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.case-pagination-back::before,
+.case-pagination-next::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(25, 25, 23, 0.035);
+
+  transform: scaleX(0);
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.case-pagination-back::before {
+  transform-origin: right center;
+}
+
+.case-pagination-next::before {
+  transform-origin: left center;
+}
+
+.case-pagination-back:hover::before,
+.case-pagination-next:hover::before {
+  transform: scaleX(1);
+}
+
+.case-pagination-back > *,
+.case-pagination-next > * {
+  position: relative;
+  z-index: 1;
+}
+
+.case-pagination-next {
+  color: rgba(25, 25, 23, 0.56);
+}
+
+.case-pagination-back strong,
+.case-pagination-next strong {
+  transition:
+    color 240ms ease,
+    transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.case-pagination-back:hover strong,
+.case-pagination-next:hover strong {
+  color: #191917;
+}
+
+.case-pagination-next:hover strong {
+  transform: translateX(8px);
+}
+
+.case-pagination-back:hover strong {
+  transform: translateX(-8px);
+}
+
+.case-pagination-arrow {
+  display: block;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(25px, 3vw, 42px);
+  font-weight: 300;
+
+  transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.case-pagination-next:hover .case-pagination-arrow {
+  transform: translateX(12px);
+}
+
+.case-pagination-back:hover .case-pagination-arrow {
+  transform: translateX(-12px);
+}
+
+@media (max-width: 620px) {
+  .case-pagination {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .case-pagination-back,
+  .case-pagination-next {
+    min-height: 210px;
+    border-right: 0;
+    border-bottom: 1px solid rgba(25, 25, 23, 0.15);
+  }
+}
