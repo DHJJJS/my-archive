@@ -509,10 +509,10 @@ export default function B2BWebContentPage() {
           </div>
         </Link>
 
-        <Link href="/portfolio" className="b2b-pagination-item">
+        <Link href="/portfolio/freelance-content" className="b2b-pagination-item">
           <div>
-            <small>BACK TO</small>
-            <strong>PROJECT INDEX</strong>
+            <small>READ NEXT · 03</small>
+            <strong>FREELANCE CONTENT</strong>
           </div>
 
           <span>→</span>

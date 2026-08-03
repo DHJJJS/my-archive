@@ -7326,3 +7326,474 @@ a {
     border-bottom: 1px solid rgba(25, 25, 23, 0.15);
   }
 }
+/* =========================================================
+   PORTFOLIO UX REFINEMENT — 2026-08
+   Click clarity, mobile readability, information density
+========================================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.portfolio-v3 {
+  --ux-paper: #f3f0e8;
+  --ux-ink: #191917;
+  --ux-muted: rgba(25, 25, 23, 0.56);
+  --ux-line: rgba(25, 25, 23, 0.16);
+  background: var(--ux-paper);
+}
+
+.portfolio-v3 .portfolio-header {
+  background: rgba(243, 240, 232, 0.9);
+}
+
+.portfolio-v3 .portfolio-nav a {
+  position: relative;
+  padding: 8px 0;
+}
+
+.portfolio-v3 .portfolio-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 1px;
+  height: 1px;
+  background: currentColor;
+  transition: right 260ms ease;
+}
+
+.portfolio-v3 .portfolio-nav a:hover::after,
+.portfolio-v3 .portfolio-nav a:focus-visible::after {
+  right: 0;
+}
+
+.portfolio-v3 .portfolio-intro {
+  min-height: calc(100svh - 68px);
+}
+
+.portfolio-scroll-cue {
+  position: absolute;
+  right: clamp(22px, 5vw, 72px);
+  bottom: clamp(24px, 4vw, 56px);
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid rgba(25, 25, 23, 0.24);
+  color: var(--ux-ink);
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  transition: background-color 200ms ease, color 200ms ease, transform 300ms ease;
+}
+
+.portfolio-scroll-cue:hover {
+  background: var(--ux-ink);
+  color: var(--ux-paper);
+  transform: translateY(-3px);
+}
+
+.section-heading-compact {
+  margin-bottom: clamp(54px, 8vw, 110px);
+}
+
+.section-heading-compact h2 {
+  max-width: 760px;
+  font-size: clamp(27px, 3.4vw, 48px);
+  line-height: 1.24;
+  word-break: keep-all;
+}
+
+.project-list-v3 {
+  border-top: 1px solid var(--ux-line);
+}
+
+.project-card-v3 {
+  position: relative;
+  min-height: clamp(210px, 21vw, 310px);
+  padding: clamp(26px, 3.7vw, 52px) clamp(18px, 3vw, 42px);
+  grid-template-columns: 64px minmax(0, 1fr) minmax(180px, 0.38fr) 128px;
+  align-items: center;
+  gap: clamp(20px, 4vw, 64px);
+  border-bottom: 1px solid var(--ux-line);
+  background: transparent;
+  cursor: pointer;
+  isolation: isolate;
+  transition: color 220ms ease;
+}
+
+.project-card-v3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #191917;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 470ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card-v3:hover::before,
+.project-card-v3:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.project-card-v3:hover,
+.project-card-v3:focus-visible {
+  color: #f3f0e8;
+  outline: none;
+}
+
+.project-card-v3 .project-number,
+.project-card-v3 .project-category,
+.project-card-v3 .project-description,
+.project-card-v3 .project-result {
+  transition: color 220ms ease;
+}
+
+.project-card-v3:hover .project-number,
+.project-card-v3:hover .project-category,
+.project-card-v3:hover .project-description,
+.project-card-v3:hover .project-result,
+.project-card-v3:focus-visible .project-number,
+.project-card-v3:focus-visible .project-category,
+.project-card-v3:focus-visible .project-description,
+.project-card-v3:focus-visible .project-result {
+  color: rgba(243, 240, 232, 0.64);
+}
+
+.project-card-v3 .project-main h3 {
+  max-width: 710px;
+  font-size: clamp(30px, 4vw, 61px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  word-break: keep-all;
+}
+
+.project-card-v3 .project-description {
+  max-width: 670px;
+  line-height: 1.8;
+}
+
+.project-action {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 118px;
+  padding: 12px 14px;
+  border: 1px solid rgba(25, 25, 23, 0.28);
+  font-size: 8px;
+  letter-spacing: 0.17em;
+  transition: border-color 220ms ease, background-color 220ms ease, transform 350ms ease;
+}
+
+.project-action i {
+  font-size: 16px;
+  font-style: normal;
+  transition: transform 350ms ease;
+}
+
+.project-card-v3:hover .project-action,
+.project-card-v3:focus-visible .project-action {
+  border-color: rgba(243, 240, 232, 0.52);
+  background: rgba(243, 240, 232, 0.08);
+  transform: translateX(5px);
+}
+
+.project-card-v3:hover .project-action i,
+.project-card-v3:focus-visible .project-action i {
+  transform: translate(4px, -4px);
+}
+
+.portfolio-about-v3 {
+  padding-top: clamp(100px, 13vw, 190px);
+  padding-bottom: clamp(100px, 13vw, 190px);
+}
+
+.about-lead-v3 {
+  max-width: 920px;
+  margin: 0 0 clamp(70px, 10vw, 140px) clamp(80px, 11vw, 175px);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5.5vw, 82px);
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  word-break: keep-all;
+}
+
+.about-values-v3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--ux-line);
+  border-bottom: 1px solid var(--ux-line);
+}
+
+.about-values-v3 article {
+  min-height: 260px;
+  padding: clamp(24px, 3vw, 42px);
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--ux-line);
+  border-bottom: 0;
+}
+
+.about-values-v3 article:last-child {
+  border-right: 0;
+}
+
+.about-values-v3 h3 {
+  margin-top: auto;
+  font-size: clamp(25px, 2.8vw, 42px);
+}
+
+.about-values-v3 p {
+  max-width: 330px;
+  margin-top: 18px;
+  line-height: 1.75;
+}
+
+.portfolio-contact-cta {
+  min-height: 58svh;
+  padding: clamp(52px, 8vw, 110px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 60px;
+  background: #171717;
+  color: #f3f0e8;
+}
+
+.portfolio-contact-cta p {
+  margin: 0 0 26px;
+  color: rgba(243, 240, 232, 0.42);
+  font-size: 8px;
+  letter-spacing: 0.23em;
+}
+
+.portfolio-contact-cta h2 {
+  max-width: 780px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(45px, 7vw, 104px);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+  word-break: keep-all;
+}
+
+.portfolio-contact-button {
+  flex: 0 0 auto;
+  min-width: 210px;
+  padding: 20px 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  border: 1px solid rgba(243, 240, 232, 0.36);
+  color: #f3f0e8;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  transition: background-color 220ms ease, color 220ms ease, transform 300ms ease;
+}
+
+.portfolio-contact-button:hover {
+  background: #f3f0e8;
+  color: #171717;
+  transform: translateY(-4px);
+}
+
+/* Case progress: visible location cue */
+.case-header::after,
+.b2b-header::after,
+.freelance-header::after,
+.team-header::after {
+  margin-left: auto;
+  margin-right: 25px;
+  padding: 7px 10px;
+  border: 1px solid currentColor;
+  color: rgba(25, 25, 23, 0.46);
+  font-size: 7px;
+  letter-spacing: 0.16em;
+}
+
+.case-header::after { content: "CASE 01 / 04"; }
+.b2b-header::after { content: "CASE 02 / 04"; }
+.freelance-header::after { content: "CASE 03 / 04"; }
+.team-header::after { content: "CASE 04 / 04"; }
+
+/* Clickable next-case areas: always recognizable */
+.case-pagination a,
+.b2b-pagination a,
+.freelance-pagination a,
+.team-pagination a {
+  cursor: pointer;
+}
+
+.case-pagination a::after,
+.b2b-pagination a::after,
+.freelance-pagination a::after,
+.team-pagination a::after {
+  content: "OPEN →";
+  position: absolute;
+  right: clamp(22px, 4vw, 58px);
+  bottom: clamp(20px, 3vw, 42px);
+  padding: 9px 12px;
+  border: 1px solid currentColor;
+  font-size: 7px;
+  letter-spacing: 0.18em;
+  opacity: 0.62;
+}
+
+.case-pagination a,
+.b2b-pagination a,
+.freelance-pagination a,
+.team-pagination a {
+  position: relative;
+}
+
+/* Mobile readability across all case studies */
+@media (max-width: 850px) {
+  .portfolio-v3 .portfolio-intro h1 {
+    font-size: clamp(58px, 16vw, 108px);
+    line-height: 0.91;
+    letter-spacing: -0.06em;
+  }
+
+  .project-card-v3 {
+    min-height: 0;
+    grid-template-columns: 42px 1fr;
+    gap: 20px 16px;
+    padding: 34px 18px;
+  }
+
+  .project-card-v3 .project-main,
+  .project-card-v3 .project-result,
+  .project-card-v3 .project-action {
+    grid-column: 2;
+  }
+
+  .project-card-v3 .project-main h3 {
+    font-size: clamp(29px, 8vw, 46px);
+    line-height: 1.13;
+  }
+
+  .project-card-v3 .project-description {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .project-card-v3 .project-result {
+    margin-top: 5px;
+  }
+
+  .project-action {
+    justify-self: start;
+    min-width: 128px;
+    margin-top: 8px;
+  }
+
+  .about-lead-v3 {
+    margin-left: 0;
+    font-size: clamp(33px, 9vw, 54px);
+    line-height: 1.22;
+  }
+
+  .about-values-v3 {
+    grid-template-columns: 1fr;
+  }
+
+  .about-values-v3 article {
+    min-height: 190px;
+    border-right: 0;
+    border-bottom: 1px solid var(--ux-line);
+  }
+
+  .about-values-v3 article:last-child {
+    border-bottom: 0;
+  }
+
+  .portfolio-contact-cta {
+    min-height: 72svh;
+    align-items: stretch;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+
+  .portfolio-contact-button {
+    width: 100%;
+  }
+
+  .case-header::after,
+  .b2b-header::after,
+  .freelance-header::after,
+  .team-header::after {
+    order: 2;
+    margin: 0 0 0 auto;
+  }
+
+  .case-nav,
+  .b2b-nav,
+  .freelance-nav,
+  .team-nav {
+    display: none;
+  }
+
+  .case-hero h1,
+  .b2b-hero h1,
+  .freelance-hero h1,
+  .team-hero h1 {
+    font-size: clamp(55px, 15vw, 94px) !important;
+    line-height: 0.94 !important;
+    letter-spacing: -0.06em !important;
+  }
+
+  .case-hero-description,
+  .b2b-hero-description,
+  .freelance-hero-description,
+  .team-hero-description {
+    margin-left: 0 !important;
+    font-size: 13px !important;
+    line-height: 1.85 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-v3 .portfolio-header {
+    padding-inline: 15px;
+  }
+
+  .portfolio-v3 .portfolio-nav {
+    gap: 12px;
+  }
+
+  .portfolio-v3 .portfolio-nav a {
+    font-size: 7px;
+  }
+
+  .portfolio-scroll-cue {
+    left: 16px;
+    right: 16px;
+    justify-content: space-between;
+  }
+
+  .section-heading-compact h2 {
+    font-size: 25px;
+  }
+
+  .case-hero h1,
+  .b2b-hero h1,
+  .freelance-hero h1,
+  .team-hero h1 {
+    font-size: clamp(48px, 14.5vw, 74px) !important;
+    line-height: 0.98 !important;
+  }
+
+  .case-pagination a::after,
+  .b2b-pagination a::after,
+  .freelance-pagination a::after,
+  .team-pagination a::after {
+    right: 18px;
+    bottom: 18px;
+  }
+}

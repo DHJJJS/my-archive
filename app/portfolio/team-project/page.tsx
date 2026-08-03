@@ -495,7 +495,7 @@ export default function TeamProjectPage() {
 
 <Link href="/portfolio/contact" className="team-pagination-item">
   <div>
-    <small>NEXT</small>
+    <small>FINAL PAGE</small>
     <strong>CONTACT</strong>
   </div>
 
