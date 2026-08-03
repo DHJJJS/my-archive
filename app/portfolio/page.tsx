@@ -121,7 +121,11 @@ export default function PortfolioPage() {
           <span>01</span>
           <div>
             <p>SELECTED WORK · 04 CASES</p>
-            <h2>프로젝트를 선택해 상세 내용을 확인할 수 있습니다.</h2>
+            <h2>
+              Selected work.
+              <br />
+              Four case studies.
+            </h2>
           </div>
         </div>
 

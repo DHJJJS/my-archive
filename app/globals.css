@@ -8085,3 +8085,301 @@ html {
     line-height: 1.04 !important;
   }
 }
+
+/* ========================================
+   V2 balance pass — restore hierarchy without visual noise
+   Applied after editorial pass
+======================================== */
+
+/* Portfolio: selected work needs a clear editorial entrance. */
+.portfolio-v3 .selected-work .section-heading-compact {
+  margin-bottom: clamp(58px, 8vw, 104px);
+  padding-bottom: clamp(28px, 4vw, 48px);
+  border-bottom: 1px solid var(--editorial-line);
+}
+
+.portfolio-v3 .selected-work .section-heading-compact h2 {
+  max-width: 880px;
+  margin-top: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(38px, 5.4vw, 76px) !important;
+  font-weight: 500;
+  line-height: 0.98 !important;
+  letter-spacing: -0.055em !important;
+  color: var(--editorial-ink);
+}
+
+/* About: stronger hierarchy, but not another oversized hero. */
+.portfolio-about-v3 .section-heading-compact {
+  margin-bottom: clamp(30px, 4vw, 48px);
+}
+
+.portfolio-about-v3 .section-heading-compact h2 {
+  max-width: 760px;
+  font-size: clamp(28px, 3vw, 40px) !important;
+  font-weight: 600;
+  line-height: 1.32 !important;
+  letter-spacing: -0.04em !important;
+}
+
+.portfolio-v3 .about-lead-v3 {
+  max-width: 820px;
+  margin: 0 0 clamp(58px, 8vw, 96px) clamp(80px, 11vw, 175px);
+  padding: clamp(22px, 3vw, 34px) 0;
+  border-top: 1px solid var(--editorial-line);
+  border-bottom: 1px solid var(--editorial-line);
+  color: rgba(25, 25, 23, 0.78);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(19px, 1.8vw, 25px) !important;
+  font-weight: 500;
+  line-height: 1.7 !important;
+  letter-spacing: -0.03em !important;
+}
+
+/* Contact: the name should sign the page, not overpower it. */
+.contact-card {
+  grid-template-columns: minmax(0, 0.88fr) minmax(420px, 0.78fr);
+  gap: clamp(60px, 9vw, 145px);
+}
+
+.contact-name h1 {
+  font-size: clamp(72px, 11.5vw, 176px) !important;
+  line-height: 0.76 !important;
+  letter-spacing: -0.075em !important;
+}
+
+/* Case 01 overview: restore a proper section statement. */
+.case-overview-main h2 {
+  max-width: 760px;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(28px, 3.15vw, 43px) !important;
+  font-weight: 600;
+  line-height: 1.38 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.case-overview-main > p {
+  margin-top: clamp(30px, 4vw, 48px);
+}
+
+/* Case 01 transformation: no abrupt black card. */
+.transformation-card,
+.transformation-card-after {
+  background: transparent !important;
+  color: var(--editorial-ink) !important;
+  border-color: rgba(25, 25, 23, 0.2) !important;
+}
+
+.transformation-card-after {
+  border-width: 2px;
+}
+
+.transformation-card-after .transformation-card-head,
+.transformation-card-after li {
+  color: rgba(25, 25, 23, 0.64) !important;
+}
+
+.transformation-card-after ul,
+.transformation-card-after li {
+  border-color: rgba(25, 25, 23, 0.15) !important;
+}
+
+.transformation-card h3 {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(25px, 2.8vw, 38px) !important;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+/* Case 01 result: one paper tone, one ink tone. */
+.case-result {
+  background: var(--editorial-paper) !important;
+}
+
+.case-result::before {
+  color: rgba(25, 25, 23, 0.022) !important;
+}
+
+.result-heading h2,
+.result-heading h2 em,
+.result-numbers strong,
+.result-numbers span {
+  color: var(--editorial-ink) !important;
+}
+
+.result-heading h2 em {
+  font-style: italic;
+  opacity: 0.58;
+}
+
+.result-numbers {
+  background: transparent;
+}
+
+.result-numbers article {
+  transition: background-color 220ms ease;
+}
+
+.result-numbers article:hover {
+  background: rgba(25, 25, 23, 0.035);
+}
+
+/* Case 02: a single restrained blue system across the whole page. */
+.b2b-case {
+  --b2b-paper: #e7eef2;
+  --b2b-ink: #173247;
+  --b2b-line: rgba(23, 50, 71, 0.17);
+  --b2b-muted: rgba(23, 50, 71, 0.62);
+  background: var(--b2b-paper) !important;
+  color: var(--b2b-ink) !important;
+}
+
+.b2b-header {
+  background: rgba(231, 238, 242, 0.92) !important;
+}
+
+.b2b-hero,
+.b2b-context,
+.b2b-problem,
+.b2b-workflow,
+.b2b-data-section,
+.b2b-transformation,
+.b2b-output,
+.b2b-capabilities,
+.b2b-reflection,
+.b2b-pagination {
+  background: var(--b2b-paper) !important;
+  color: var(--b2b-ink) !important;
+  border-color: var(--b2b-line) !important;
+}
+
+.b2b-problem-grid,
+.b2b-problem-grid article,
+.b2b-workflow-list,
+.b2b-workflow-row,
+.b2b-specimen,
+.b2b-decision-list,
+.b2b-decision-list article,
+.b2b-capabilities-list,
+.b2b-capabilities-list article,
+.b2b-reflection-note {
+  border-color: var(--b2b-line) !important;
+}
+
+.b2b-problem-copy > p,
+.b2b-problem-grid span,
+.b2b-problem-grid p,
+.b2b-problem-grid h3,
+.b2b-reflection-index span,
+.b2b-reflection-index p,
+.b2b-reflection-label,
+.b2b-reflection-note span,
+.b2b-reflection-note p,
+.b2b-reflection blockquote,
+.b2b-reflection blockquote em {
+  color: var(--b2b-ink) !important;
+}
+
+.b2b-problem-copy > p,
+.b2b-problem-grid span,
+.b2b-problem-grid p,
+.b2b-reflection-index span,
+.b2b-reflection-index p,
+.b2b-reflection-label,
+.b2b-reflection-note span,
+.b2b-reflection-note p {
+  opacity: 0.62;
+}
+
+.b2b-problem-grid article:hover,
+.b2b-workflow-row:hover,
+.b2b-decision-list article:hover,
+.b2b-capabilities-list article:hover {
+  background: rgba(23, 50, 71, 0.035) !important;
+}
+
+.b2b-output-image-frame {
+  background: #f5f8fa !important;
+  border-color: var(--b2b-line) !important;
+}
+
+.b2b-output-number {
+  background: rgba(231, 238, 242, 0.92) !important;
+  color: var(--b2b-ink) !important;
+  border-color: var(--b2b-line) !important;
+}
+
+/* Case 02 workflow: Korean titles carry the information hierarchy. */
+.b2b-workflow-title p {
+  margin-bottom: 10px;
+  font-size: 8px !important;
+  color: rgba(23, 50, 71, 0.48) !important;
+}
+
+.b2b-workflow-title h3 {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(24px, 2.65vw, 36px) !important;
+  font-weight: 650;
+  line-height: 1.35 !important;
+  letter-spacing: -0.04em !important;
+  color: var(--b2b-ink) !important;
+}
+
+.b2b-workflow-description {
+  font-size: clamp(14px, 1.05vw, 16px) !important;
+  line-height: 1.85 !important;
+  color: var(--b2b-muted) !important;
+}
+
+@media (max-width: 850px) {
+  .portfolio-v3 .selected-work .section-heading-compact h2 {
+    font-size: clamp(36px, 10vw, 56px) !important;
+    line-height: 1.03 !important;
+  }
+
+  .portfolio-v3 .about-lead-v3 {
+    margin-left: 0;
+    font-size: 18px !important;
+    line-height: 1.75 !important;
+  }
+
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-name h1 {
+    font-size: clamp(68px, 20vw, 118px) !important;
+    line-height: 0.8 !important;
+  }
+
+  .case-overview-main h2 {
+    font-size: clamp(25px, 7vw, 34px) !important;
+    line-height: 1.45 !important;
+  }
+
+  .transformation-card {
+    min-height: auto;
+  }
+
+  .b2b-workflow-title h3 {
+    font-size: 23px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-v3 .selected-work .section-heading-compact h2 {
+    font-size: 36px !important;
+  }
+
+  .portfolio-about-v3 .section-heading-compact h2 {
+    font-size: 27px !important;
+  }
+
+  .contact-name h1 {
+    font-size: clamp(62px, 19vw, 96px) !important;
+  }
+
+  .case-overview-main h2 {
+    font-size: 25px !important;
+  }
+}
