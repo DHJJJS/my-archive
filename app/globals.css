@@ -7797,3 +7797,291 @@ html {
     bottom: 18px;
   }
 }
+
+
+/* ========================================
+   Final editorial pass — typography, density and UX
+   2026-08 revision
+======================================== */
+
+:root {
+  --editorial-paper: #f2f0ea;
+  --editorial-ink: #191917;
+  --editorial-muted: rgba(25, 25, 23, 0.58);
+  --editorial-line: rgba(25, 25, 23, 0.16);
+  --ko-heading: clamp(18px, 1.75vw, 24px);
+  --ko-subheading: clamp(17px, 1.45vw, 21px);
+  --ko-body: clamp(14px, 1.05vw, 16px);
+}
+
+/* One long paper tone. Dark sections remain intentional accents. */
+.portfolio-page,
+.case-page,
+.b2b-case,
+.freelance-case,
+.team-case {
+  background: var(--editorial-paper);
+  color: var(--editorial-ink);
+}
+
+/* Korean copy is information, not the main visual headline. */
+.portfolio-v3 .section-heading-compact h2,
+.portfolio-v3 .about-lead-v3,
+.case-overview-main h2,
+.team-overview-lead,
+.portfolio-contact-cta h2 {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: var(--ko-heading) !important;
+  font-weight: 500;
+  line-height: 1.55 !important;
+  letter-spacing: -0.025em !important;
+  word-break: keep-all;
+}
+
+.portfolio-v3 .about-lead-v3 {
+  max-width: 760px;
+  margin: 0 0 clamp(46px, 7vw, 86px) clamp(80px, 11vw, 175px);
+  color: var(--editorial-muted);
+}
+
+/* Korean project titles stay readable and never compete with the English hero. */
+.project-card-v3 .project-main h3 {
+  max-width: 720px;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: clamp(22px, 2.1vw, 30px) !important;
+  font-weight: 600;
+  line-height: 1.38 !important;
+  letter-spacing: -0.035em !important;
+  word-break: keep-all;
+}
+
+.project-card-v3 .project-description,
+.project-card-v3 .project-result,
+.portfolio-description,
+.case-overview-main > p,
+.b2b-context-copy > p,
+.freelance-overview-copy > p,
+.team-overview-body,
+.team-overview-lead,
+.about-values-v3 p {
+  font-size: var(--ko-body) !important;
+  line-height: 1.8 !important;
+  word-break: keep-all;
+}
+
+/* Korean subheads inside detailed cases. */
+.case-work-title h3,
+.case-principles-list h3,
+.b2b-problem-grid h3,
+.b2b-workflow-title h3,
+.b2b-decision-list h3,
+.b2b-capabilities-list h3,
+.freelance-timeline-content h3,
+.freelance-scope-title h3,
+.freelance-system-list h3,
+.team-role-title h3,
+.team-process-content h3,
+.team-learning-list h3 {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: var(--ko-subheading) !important;
+  font-weight: 600;
+  line-height: 1.5 !important;
+  letter-spacing: -0.025em !important;
+  word-break: keep-all;
+}
+
+/* Lower density: fewer oversized blocks, more breathing room. */
+.section-heading-compact {
+  margin-bottom: clamp(42px, 6vw, 74px);
+}
+
+.project-card-v3 {
+  min-height: 178px;
+  padding: clamp(25px, 3vw, 38px) clamp(18px, 3vw, 42px);
+  grid-template-columns: 54px minmax(0, 1fr) minmax(170px, 0.34fr) 124px;
+  gap: clamp(18px, 3.2vw, 48px);
+}
+
+.project-card-v3 .project-description {
+  max-width: 620px;
+  margin-top: 15px;
+}
+
+.project-action {
+  min-width: 122px;
+  justify-content: space-between;
+  background: rgba(25, 25, 23, 0.025);
+  border-color: rgba(25, 25, 23, 0.34);
+}
+
+/* Make every case unmistakably interactive without turning it into a loud card. */
+.project-card-v3:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--editorial-ink);
+}
+
+.project-card-v3:hover .project-action,
+.project-card-v3:focus-visible .project-action {
+  background: #f3f0e8;
+  color: #191917;
+  border-color: #f3f0e8;
+}
+
+.about-values-v3 article {
+  min-height: 205px;
+  padding: clamp(22px, 2.5vw, 34px);
+}
+
+.about-values-v3 h3 {
+  font-size: clamp(19px, 1.8vw, 26px) !important;
+  line-height: 1.35;
+}
+
+.portfolio-contact-cta {
+  min-height: 44svh;
+  padding: clamp(44px, 6vw, 82px);
+}
+
+.portfolio-contact-cta h2 {
+  color: #f3f0e8;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 70px) !important;
+  line-height: 1 !important;
+  letter-spacing: -0.05em !important;
+}
+
+/* Keep the page sequence obvious. */
+.case-header::after,
+.b2b-header::after,
+.freelance-header::after,
+.team-header::after {
+  border-radius: 999px;
+  background: rgba(25, 25, 23, 0.035);
+}
+
+.case-pagination a::after,
+.b2b-pagination a::after,
+.freelance-pagination a::after,
+.team-pagination a::after {
+  opacity: 0.78;
+  background: rgba(242, 240, 234, 0.82);
+  backdrop-filter: blur(8px);
+}
+
+/* Reduce Korean display copy inside the three reflection endings. */
+.case-learning blockquote,
+.b2b-reflection blockquote,
+.freelance-reflection blockquote,
+.team-reflection-copy blockquote {
+  font-size: clamp(25px, 3.4vw, 44px) !important;
+  line-height: 1.42 !important;
+  letter-spacing: -0.035em !important;
+  word-break: keep-all;
+}
+
+/* Desktop body width prevents long Korean lines from becoming tiring. */
+.case-overview-main > p,
+.b2b-context-copy > p,
+.freelance-overview-copy > p,
+.team-overview-body {
+  max-width: 650px;
+}
+
+@media (max-width: 850px) {
+  :root {
+    --ko-heading: 20px;
+    --ko-subheading: 18px;
+    --ko-body: 15px;
+  }
+
+  .portfolio-v3 .portfolio-intro h1 {
+    font-size: clamp(50px, 14vw, 84px);
+    line-height: 0.98;
+  }
+
+  .portfolio-v3 .section-heading-compact h2,
+  .portfolio-v3 .about-lead-v3,
+  .case-overview-main h2,
+  .team-overview-lead {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .project-card-v3 {
+    padding: 30px 18px;
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 17px 14px;
+  }
+
+  .project-card-v3 .project-main h3 {
+    font-size: 22px !important;
+    line-height: 1.42 !important;
+  }
+
+  .project-card-v3 .project-result {
+    font-size: 11px !important;
+    line-height: 1.65 !important;
+  }
+
+  .project-action {
+    min-height: 42px;
+    min-width: 142px;
+    padding: 12px 14px;
+    background: rgba(25, 25, 23, 0.04);
+  }
+
+  .about-values-v3 article {
+    min-height: auto;
+    padding: 27px 0;
+  }
+
+  .portfolio-contact-cta {
+    min-height: 54svh;
+    padding: 42px 18px;
+  }
+
+  .portfolio-contact-cta h2 {
+    font-size: clamp(34px, 11vw, 54px) !important;
+  }
+
+  .case-hero h1,
+  .b2b-hero h1,
+  .freelance-hero h1,
+  .team-hero h1 {
+    font-size: clamp(46px, 13vw, 76px) !important;
+    line-height: 1 !important;
+  }
+
+  .case-learning blockquote,
+  .b2b-reflection blockquote,
+  .freelance-reflection blockquote,
+  .team-reflection-copy blockquote {
+    font-size: 24px !important;
+    line-height: 1.55 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .portfolio-v3 .portfolio-intro h1 {
+    font-size: clamp(47px, 13.5vw, 68px);
+  }
+
+  .portfolio-v3 .section-heading-compact h2,
+  .portfolio-v3 .about-lead-v3,
+  .case-overview-main h2,
+  .team-overview-lead {
+    font-size: 19px !important;
+    line-height: 1.6 !important;
+  }
+
+  .project-card-v3 .project-main h3 {
+    font-size: 20px !important;
+  }
+
+  .case-hero h1,
+  .b2b-hero h1,
+  .freelance-hero h1,
+  .team-hero h1 {
+    font-size: clamp(43px, 12.8vw, 64px) !important;
+    line-height: 1.04 !important;
+  }
+}

@@ -121,7 +121,7 @@ export default function PortfolioPage() {
           <span>01</span>
           <div>
             <p>SELECTED WORK · 04 CASES</p>
-            <h2>각 프로젝트를 눌러 작업 과정과 결과를 확인할 수 있습니다.</h2>
+            <h2>프로젝트를 선택해 상세 내용을 확인할 수 있습니다.</h2>
           </div>
         </div>
 
@@ -162,9 +162,7 @@ export default function PortfolioPage() {
         </div>
 
         <p className="about-lead about-lead-v3">
-          정확한 정보를 확인하고, 사용자의 질문을 이해하며,
-          <br />
-          결과의 원인을 다음 기획에 반영합니다.
+          질문을 확인하고 정보를 검토하며, 결과의 원인을 다음 기획에 반영합니다.
         </p>
 
         <div className="about-values about-values-v3">
@@ -181,7 +179,7 @@ export default function PortfolioPage() {
       <section className="portfolio-contact-cta">
         <div>
           <p>CONTACT · 03</p>
-          <h2>연락처와 포트폴리오 PDF를 확인하세요.</h2>
+          <h2>More about me.</h2>
         </div>
 
         <Link href="/portfolio/contact" className="portfolio-contact-button">
